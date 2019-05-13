@@ -1,0 +1,22 @@
+.overlay-yellow-box {
+    background-color: #fde85e;
+    color: black;
+    padding: 0.5em 0;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    position: relative;
+    margin: 1em auto;
+    display: inline-block;
+    padding: 0.5em;
+
+    @include breakpoint(l) {
+        font-size: 16px;
+    }
+    @include breakpoint(m) {
+        font-size: 14px;
+    }
+    @include breakpoint(s) {
+        margin: 1em auto 0 auto;
+    }
+}

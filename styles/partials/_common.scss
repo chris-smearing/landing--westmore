@@ -1,0 +1,83 @@
+@import 'utils';
+@import '../settings';
+
+.section--full-width, .full-width {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@mixin italic-underlined( $font-size ) {
+    text-transform: uppercase;
+    font-style: italic;
+    border-bottom: 3px solid $brand-mint;
+    font-size: $font-size;
+}
+.hide-small {
+    @include breakpoint(s) {
+        display: none !important;
+    }
+}
+.hide-medium-down {
+    @include breakpoint(m) {
+        display: none !important;
+    }
+}
+.hide-med-up {
+    @include breakpoint(m-up) {
+        display: none !important;
+    }
+}
+.hide-lg-up {
+    @include breakpoint(l-up) {
+        display: none !important;
+    }
+}
+.hide-xl-up {
+    @include breakpoint(xl-up) {
+        display: none !important;
+    }
+}
+.hide {
+    display: none;
+}
+.img-responsive {
+    max-width: 100%;
+    // width: 100%;
+    height: auto;
+    display: block;
+}
+.font--crimson {
+    font-family: Crimson, serif !important;
+}
+.font--fjalla {
+    font-family: 'Fjalla One', sans-serif !important;
+    letter-spacing: 0.01em;
+}
+.italic {
+    font-style: italic;
+}
+.bold {
+    font-weight: bold;
+}
+.bold--desktop {
+    @include breakpoint(l-up) {
+        font-weight: bold;
+    }
+}
+.block--center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.underline {
+    text-decoration: underline;
+}
+.mint {
+    color: $brand-mint;
+}
+.text-white {
+    color: white;
+}
+.center {
+    text-align: center;
+}

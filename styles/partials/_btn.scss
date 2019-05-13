@@ -1,0 +1,14 @@
+@import '../settings';
+
+@mixin btn__purple-bkg-white-text {
+    background-color: $brand-purple;
+    font-family: Crimson, serif;
+    font-size: 20px;
+    line-height: 1em;
+    padding: 0.7em 2.5em 0.5em;
+    color: white;
+    border-radius: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+}

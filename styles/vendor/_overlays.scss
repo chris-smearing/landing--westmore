@@ -1,0 +1,58 @@
+@import "overlay_yellow_box";
+.overlay-title {
+    font-size: 50px;
+    color: #2c348d;
+    max-width: 90%;
+    letter-spacing: 0.01em;
+    position: relative;
+    top: 0;
+    margin: 0.5em auto;
+
+    @include breakpoint(l) {
+        font-size: 32px;
+        max-width: 100%;
+    }
+    @include breakpoint(m) {
+        font-size: 24px;
+    }
+    @include breakpoint(s) {
+        font-size: 20px;
+    }
+}
+.overlay-subtitle {
+    font-size: 26px;
+    color: #2c348d;
+    max-width: 70%;
+    letter-spacing: 0.01em;
+    position: relative;
+    margin: 0 auto;
+
+    @include breakpoint(l) {
+        font-size: 22px;
+        max-width: 100%;
+    }
+    @include breakpoint(m) {
+        font-size: 20px;
+    }
+    @include breakpoint(s) {
+        font-size: 16px;
+    }
+}
+.btn-shop-now {
+    position: relative;
+    background-color: #8c62f5;
+    color: white;
+    padding: 1em;
+    text-transform: uppercase;
+    top: 2em;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint(l) {
+        top: 1em;
+        padding: 0.7em;
+    }
+    @include breakpoint(s) {
+        padding: 0.5em;
+    }
+}

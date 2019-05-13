@@ -1,0 +1,429 @@
+@import 'settings';
+@import 'partials/common';
+@import 'partials/btn';
+@import "partials/utils";
+// the following button is common within this page
+@mixin btn-buy {
+    @include btn__purple-bkg-white-text;
+    width: 15em;
+    @include breakpoint(l-up) {
+        width: unset;
+    }
+}
+
+header.main-header {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+#eyecons-lp-header {
+    @include breakpoint(l-up) {
+        width: 100%;
+        position: relative;
+        text-align: center;
+        img.full-width {
+            display: none;
+        }
+        .headline {
+            background: url('//cdn.shopify.com/s/files/1/2201/7369/files/header-desktop_1200x427.jpg?15450540427975308160') no-repeat center;
+            // background-repeat: no-repeat;
+            // background-size: cover;
+            padding: 6em 0;
+            h2 {
+                font-size: 40px;
+                line-height: 48px;
+            }
+            // this is necessary because the background image is only 1200px wide, 
+            //otherwise the image would letterbox inside the container
+            @include breakpoint(xxl) {
+                background-size: cover;
+            }
+        }
+    }
+    @include breakpoint(m) {
+        width: 100%;
+        position: relative;
+        text-align: center;
+        img {
+            width: 100%;
+            max-width: unset;
+        }
+        .headline {
+            padding: 2em 1em;
+            background-image: none;
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+    .headline {
+        position: relative;
+        h4 {
+            font-style: italic;
+            font-family: Crimson, serif;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1em;
+        }
+        h2 {
+            font-family: 'Fjalla One', sans-serif;
+            color: $brand-purple;
+            margin: 0 auto;
+            padding: 1em 0;
+            &.no-btm-padding {
+                padding-bottom: 0;
+            }
+            &.no-top-padding {
+                padding-top: 0;
+            }
+            letter-spacing: 0.01em;
+            span.smaller {
+                font-size: smaller;
+                display: inline-table;
+                vertical-align: middle;
+                line-height: calc(1em * 1.25);
+            }
+        }
+    }
+    a.btn-buy {
+        @include btn-buy();
+        position: relative;
+        margin: 0 auto;
+    }
+}
+
+#eyecons-lp {
+    width: 100%;
+    max-width: 1260px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 16px;
+    text-align: center;
+    img {
+        max-width: 100%;
+        display: block;
+        height: auto;
+    }
+    h2.italic-underlined {
+        @include italic-underlined(36px);
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    h2#headline-hide-small {
+        @extend .hide-medium-down;
+    }
+    .gift-limited {
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(l-up) {
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            padding: 1em 0 3em;
+        }
+    }
+    .group-container {
+        @include breakpoint(l-up) {
+            flex: 1 1 40%;
+            padding-left: 1em;
+        }
+        @include breakpoint(xl) {
+            padding-left: 2em;
+        }
+        @include breakpoint(xxl) {
+            padding-left: 3em;
+        }
+        .group--sticker {
+            position: relative;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            @include breakpoint(l-up) {
+                // padding-left: 5em;
+            }
+            @include breakpoint(xl) {
+                // padding-left: 9em;
+            }
+            @include breakpoint(xxl) {
+                // padding-left: 10em;
+            }
+            // img {
+            //     @include breakpoint(l-up) {
+            //         max-width: 100%;
+            //     }
+            // }
+            .sticker--mint {
+                position: absolute;
+                border-radius: 50%;
+                top: 20%;
+                right: 8%;
+                width: 5em;
+                height: 5em;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                @include breakpoint(l-up) {
+                    right: 10%;
+                    width: 6em;
+                    height: 6em;
+                }
+                background-color: $brand-mint;
+                padding: 1em;
+                p {
+                    font-family: 'Fjalla One', sans-serif;
+                    font-size: 18px;
+                    line-height: 1em;
+                    color: $grey-font-color;
+                    text-transform: uppercase;
+                    margin: 0;
+                    padding: 0;
+                    @include breakpoint(l-up) {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    }
+    .limited-offer {
+        // text-align: center;
+        padding: 3em 2em;
+        @include breakpoint(l-up) {
+            flex: 1 1 40%;
+            padding: 0 5em 0 2em;
+            max-width: 100%;
+        }
+        @include breakpoint(xl) {
+            padding: 0 6em 0 4em;
+        }
+        @include breakpoint(xxl) {
+            padding: 0 7em 0 5em;
+        }
+        h2 {
+            &.italic-underlined {
+                display: inline-block;
+                @include italic-underlined(30px);
+                margin: 0;
+            }
+            &.big-purple {
+                font-size: 38px;
+                font-weight: bold;
+                color: $brand-purple;
+                font-family: 'Fjalla One', sans-serif;
+                margin: 0;
+                padding: 0;
+                line-height: 1em;
+            }
+        }
+        p {
+            padding: 0 2em;
+            font-family: Crimson, serif;
+            font-size: 18px;
+            span.bigger-bold {
+                font-weight: bold;
+                font-size: larger;
+                font-family: 'Fjalla One', sans-serif;
+                margin: 0;
+                padding: 1rem 0;
+            }
+            @include breakpoint(l-up) {
+                padding: 0;
+                margin-top: 0;
+            }
+        }
+        .pct-off-50 {
+            font-style: italic;
+            @include breakpoint(l-up) {
+                padding-top: 1em;
+            }
+        }
+        a.btn-buy {
+            @include btn-buy();
+            margin: 0 auto;
+        }
+        h2#headline-hide-lg-up {
+            @extend .hide-lg-up;
+        }
+    }
+    #introducting-eyecons {
+        position: relative;
+        padding: 3em 2em;
+        background-color: rgb(192, 230, 224);
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(l-up) {
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+        .headline {
+            padding: 0 2em;
+            @include breakpoint(l-up) {
+                flex: 1 1 40%;
+                padding: 0 5em 0 2em;
+                max-width: 100%;
+            }
+            @include breakpoint(xl) {
+                padding: 0 6em 0 9em;
+            }
+            @include breakpoint(xxl) {
+                padding: 0 4em 0 10em;
+            }
+            h2 {
+                font-size: 24px;
+                font-family: 'Fjalla One', sans-serif;
+                margin: 0 auto;
+                padding-bottom: 0.5em;
+            }
+            p {
+                font-family: Crimson, serif;
+                margin: 0 auto;
+                @include breakpoint(l-up) {
+                    padding-bottom: 2em;
+                }
+            }
+            a {
+                @include btn-buy();
+                &.hide-med-down {
+                    @extend .hide-medium-down;
+                }
+            }
+        }
+        .img-sticker-group {
+            position: relative;
+            @include breakpoint(l-up) {
+                flex: 1 1 40%;
+                // padding-right: 5em;
+            }
+            @include breakpoint(xl) {
+                // padding-right: 9em;
+            }
+            @include breakpoint(xxl) {
+                // padding-right: 10em;
+            }
+            .sticker--white {
+                position: absolute;
+                border-radius: 50%;
+                top: 40%;
+                left: 8%;
+                width: 5em;
+                height: 5em;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: white;
+                padding: 1em;
+                @include breakpoint(l-up) {
+                    width: 6em;
+                    height: 6em;
+                }
+                p {
+                    font-size: 18px;
+                    line-height: 1em;
+                    color: $grey-font-color;
+                    text-transform: uppercase;
+                    margin: 0;
+                    padding: 0;
+                    @include breakpoint(l-up) {
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+        #intro-buy-btn {
+            &.btn-buy {
+                @include btn-buy();
+                margin: 0 auto;
+            }
+            &.hide-lg-up {
+                @include breakpoint(l-up) {
+                    display: none;
+                }
+            }
+        }
+    }
+    #two-minute-eyes {
+        
+        // flex-direction: column;
+        padding: 3em 2em 0;
+        @include breakpoint(l-up) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2em;
+        }
+        img {
+            @include breakpoint(l-up) {
+                flex: 1 1 40%;
+            }
+            @include breakpoint(l-up) {
+                // padding-left: 5em;
+                max-width: 50%;
+            }
+            @include breakpoint(xl) {
+                // padding-left: 9em;
+            }
+            @include breakpoint(xxl) {
+                // padding-left: 10em;
+            }
+        }
+        .instant {
+            display: block;
+            @include breakpoint(l-up) {
+                flex: 1 1 40%;
+                padding: 0 5em 0 2em;
+                max-width: 100%;
+            }
+            @include breakpoint(xl) {
+                padding: 0 9em 0 6em;
+            }
+            @include breakpoint(xxl) {
+                padding: 0 10em 0 4em;
+            }
+            a {
+                @include btn-buy();
+                &.hide-med-down {
+                    @extend .hide-medium-down;
+                }
+            }            
+            h2 {
+                font-size: 24px;
+                font-family: 'Fjalla One', sans-serif;
+                margin: 0 auto;
+                padding-bottom: 0.5em;
+            }
+            p {
+                font-family: Crimson, serif;
+                margin: 0 auto;
+                padding: 0 2em;
+                @include breakpoint(m-up) {
+                    padding-bottom: 2em;
+                }
+                @include breakpoint(l-up) {
+                    padding: 0 0 2em 0;
+                }
+            }
+        }        
+        a.btn-buy {
+            @include btn-buy();
+            margin: 0 auto;
+            &.hide-lg-up {
+                @include breakpoint(l-up) {
+                    display: none;
+                }
+            }
+        }
+        @include breakpoint(m-up) {
+            .instant {
+                order: 2;
+            }
+            img {
+                order: 1;
+            }
+        }
+    }
+}
