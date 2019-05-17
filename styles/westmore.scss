@@ -3,3 +3,17 @@ Pull together all custom styles and minify using Prepros or some other automated
 workflow.
 */
 @import 'custom';
+
+.demo-site {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0.5rem 1rem;
+
+    background-color: $brand-mint;
+    border: 3px solid $brand-purple;
+    color: $brand-purple;
+    z-index: 1000;
+
+    font-family: 'Fjalla One', sans-serif;
+}
